@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bndservice-ffd90": {
+      "hosting": {
+        "vag-banda": [
+          "bndservice-ffd90"
+        ]
+      }
+    }
+  }
+}
