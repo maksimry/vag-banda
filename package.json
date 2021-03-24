@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prepare": "husky install",
-    "pretty-quick": "pretty-quick"
+    "pretty-quick": "pretty-quick",
+    "build-watch": "ng build --watch",
+    "server": "lite-server --baseDir=\"dist/vag-banda\""
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,7 @@
     "@angular/router": "~11.2.7",
     "@angular/service-worker": "^11.2.7",
     "core-js": "^2.5.4",
+    "postcss": "^8.1.0",
     "rxjs": "~6.6.6",
     "tslib": "^1.9.0",
     "zone.js": "~0.11.4"
@@ -46,7 +49,9 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "prettier": "2.2.1",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
+    "lite-server": "^2.6.1",
     "protractor": "~7.0.0",
     "tailwindcss": "^2.0.4",
     "ts-node": "~7.0.0",
