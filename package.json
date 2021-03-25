@@ -11,7 +11,8 @@
     "prepare": "husky install",
     "pretty-quick": "pretty-quick",
     "build-watch": "ng build --watch",
-    "server": "lite-server --baseDir=\"dist/vag-banda\""
+    "server": "lite-server --baseDir=\"dist/vag-banda\"",
+    "deploy": "ng build --prod && ng deploy"
   },
   "private": true,
   "dependencies": {
