@@ -11,9 +11,13 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
+import { HomeComponent } from './pages/home/home.component'
+import { AboutComponent } from './pages/about/about.component'
+import { ServicesComponent } from './pages/services/services.component'
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
-  declarations: [AppComponent, MainNavComponent],
+  declarations: [AppComponent, MainNavComponent, HomeComponent, AboutComponent, ServicesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,7 +27,8 @@ import { MatListModule } from '@angular/material/list'
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
