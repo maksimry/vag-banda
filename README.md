@@ -29,3 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 #### Some useful stuff
 
 ng g @angular/material:material-nav --name=main-nav
+
+git config user.email rybalchenko.mx@gmail.com
+git config user.name maksymrybalchenkogh
