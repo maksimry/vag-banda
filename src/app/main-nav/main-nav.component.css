@@ -15,3 +15,15 @@
   top: 0;
   z-index: 1;
 }
+/* custom */
+.hidden {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.desktop-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}

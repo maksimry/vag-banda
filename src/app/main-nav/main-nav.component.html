@@ -1,21 +1,24 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
-    class="sidenav"
     fixedInViewport
+    mode="over"
+    position="end"
+    class="sidenav"
+    [class.hidden]="!(isHandset$ | async)"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item href="#">Главная</a>
+      <a mat-list-item href="#">0 нас</a>
+      <a mat-list-item href="#">Услуги</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
+      <span>vag-banda</span>
+      <span style="flex: 1 1 auto"></span>
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -25,8 +28,19 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>vag-banda</span>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <hr style="margin: 20px 0" />
+    <mat-toolbar *ngIf="!(isHandset$ | async)">
+      <mat-nav-list class="desktop-menu">
+        <a mat-raised-button color="accent" href="#">Главная</a>
+        <a mat-raised-button color="accent" href="#">0 нас</a>
+        <a mat-raised-button color="accent" href="#">Услуги</a>
+      </mat-nav-list>
+    </mat-toolbar>
+    <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<!--<button mat-stroked-button-->
+<ng-container *ngTemplateOutlet="menuList"></ng-container>
+<ng-template #menuList></ng-template>
