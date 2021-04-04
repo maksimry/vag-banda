@@ -16,6 +16,9 @@ import { AboutComponent } from './pages/about/about.component'
 import { ServicesComponent } from './pages/services/services.component'
 import { MatCardModule } from '@angular/material/card'
 import { HttpClientModule } from '@angular/common/http'
+import { MatInputModule } from '@angular/material/input'
+import { MatFormField } from '@angular/material/form-field'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [AppComponent, MainNavComponent, HomeComponent, AboutComponent, ServicesComponent],
@@ -30,7 +33,10 @@ import { HttpClientModule } from '@angular/common/http'
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class PublicApiService {
   private readonly url = `https://api.telegram.org/bot${this.TG_BOT_API_KEY}/sendMessage?chat_id=${this.TG_CHAT_ID}&text=`
   constructor(private http: HttpClient) {}
 
-  public tgTest() {
-    return this.http.get(this.url + 'test rybonie')
+  public sendBndServiceBotMessage(text: string): Observable<any> {
+    return this.http.get(this.url + text)
   }
 }
