@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { Observable } from 'rxjs'
 import { map, shareReplay } from 'rxjs/operators'
-import { AppRoutes } from '../constants/app-routes'
+import { AppRoutes } from '../../constants/app-routes'
 
 @Component({
   selector: 'app-main-nav',

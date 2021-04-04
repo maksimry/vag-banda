@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatButtonModule } from '@angular/material/button'
-import { MainNavComponent } from './main-nav/main-nav.component'
+import { MainNavComponent } from './components/main-nav/main-nav.component'
 import { LayoutModule } from '@angular/cdk/layout'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
@@ -15,6 +15,7 @@ import { HomeComponent } from './pages/home/home.component'
 import { AboutComponent } from './pages/about/about.component'
 import { ServicesComponent } from './pages/services/services.component'
 import { MatCardModule } from '@angular/material/card'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [AppComponent, MainNavComponent, HomeComponent, AboutComponent, ServicesComponent],
@@ -22,6 +23,7 @@ import { MatCardModule } from '@angular/material/card'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     LayoutModule,
     MatToolbarModule,
