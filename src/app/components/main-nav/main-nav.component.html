@@ -16,9 +16,25 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <span class="mat-headline">Banda Service</span>
+    <mat-toolbar color="primary" role="heading">
+      <img class="logo-img" src="/assets/img/vag-banda-logo.png" alt="bndservice logo" />
       <span style="flex: 1 1 auto"></span>
+      <div></div>
+      <div class="flex">
+        <a [routerLink]="appRoutes.home" class="flex-col text-accent">
+          <span>Киевская, 8-А</span>
+          <span>( Софикская борщаговка )</span>
+        </a>
+        <a mat-button color="accent" href="tel:+380731104101">+380731104101</a>
+      </div>
+      <!--      <div class="flex">-->
+      <!--        <a [routerLink]="appRoutes.home" class="flex-col text-accent">-->
+      <!--          <span>Стеценко, 19/91</span>-->
+      <!--          <span>( метро Нивки )</span>-->
+      <!--        </a>-->
+      <!--        <a mat-button color="accent" href="tel:+380731104101">+380731104101</a>-->
+      <!--      </div>-->
+
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -31,9 +47,12 @@
     </mat-toolbar>
     <mat-toolbar *ngIf="!(isHandset$ | async)">
       <nav class="desktop-menu">
-        <a mat-raised-button color="accent" [routerLink]="appRoutes.home">Главная</a>
-        <a mat-raised-button color="accent" [routerLink]="appRoutes.about">0 нас</a>
-        <a mat-raised-button color="accent" [routerLink]="appRoutes.services">Услуги</a>
+        <a mat-button color="primary" [routerLink]="appRoutes.about">0 нас</a>
+        <a mat-button color="primary" [routerLink]="appRoutes.services">Услуги</a>
+        <a mat-button color="primary" [routerLink]="appRoutes.home">Контакты</a>
+        <a mat-button color="primary" [routerLink]="appRoutes.home">
+          <img class="logo-img-menu" src="/assets/img/vag-banda-logo.png" alt="bndservice logo" />
+        </a>
       </nav>
     </mat-toolbar>
     <main style="margin-top: 30px">
