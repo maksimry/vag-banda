@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { Observable } from 'rxjs'
 import { map, shareReplay } from 'rxjs/operators'
 import { AppRoutes } from '../../constants/app-routes'
+import { Contacts } from '../../constants/contacts'
 
 @Component({
   selector: 'app-main-nav',
@@ -11,20 +12,11 @@ import { AppRoutes } from '../../constants/app-routes'
 })
 export class MainNavComponent {
   public readonly appRoutes = AppRoutes
-  public readonly geoLocationAddress = 'Киевская, 8a'
-  public readonly geoLocationDistrict = 'Софиеская борщаговка'
-  public readonly geoLocationUrl = `http://maps.google.com/?q=${this.geoLocationDistrict}, ${this.geoLocationAddress}`
+  public readonly geoLocationAddress = Contacts.geoLocationAddress
+  public readonly geoLocationDistrict = Contacts.geoLocationDistrict
+  public readonly geoLocationUrl = Contacts.geoLocationUrl
 
-  public readonly socials = [
-    {
-      icon: 'facebook',
-      url: decodeURIComponent('https://facebook.com/vagbanda.com.ua/')
-    },
-    {
-      icon: 'instagram',
-      url: decodeURIComponent('https://instagram.com/vagbanda_kiev/')
-    }
-  ]
+  public readonly socials = Contacts.socials
 
   public isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(result => result.matches),

@@ -20,9 +20,18 @@ import { MatInputModule } from '@angular/material/input'
 import { MatFormField } from '@angular/material/form-field'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ContactsComponent } from './pages/contacts/contacts.component'
+import { FooterComponent } from './components/footer/footer.component'
 
 @NgModule({
-  declarations: [AppComponent, MainNavComponent, HomeComponent, AboutComponent, ServicesComponent, ContactsComponent],
+  declarations: [
+    AppComponent,
+    MainNavComponent,
+    HomeComponent,
+    AboutComponent,
+    ServicesComponent,
+    ContactsComponent,
+    FooterComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
