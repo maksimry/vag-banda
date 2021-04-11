@@ -24,19 +24,24 @@
       <span style="flex: 1 1 auto"></span>
       <div></div>
       <div class="flex">
-        <a [routerLink]="appRoutes.home" class="flex-col text-accent">
-          <span>Киевская, 8-А</span>
-          <span>( Софикская борщаговка )</span>
+        <a [href]="geoLocationUrl" class="flex text-yellow text-sm mr-lg" target="_blank">
+          <span class="mr-md flex items-center">
+            <mat-icon class="text-icon" aria-label="map-location">location_on</mat-icon>
+          </span>
+
+          <span class="flex flex-col">
+            <span>{{geoLocationAddress}}</span>
+            <span>{{geoLocationDistrict}}</span>
+          </span>
         </a>
-        <a mat-button color="accent" href="tel:+380731104101">+380731104101</a>
+
+        <a href="tel:+380731104101" class="flex items-center text-accent text-sm mr-lg">
+          <span class="mr-md flex items-center">
+            <mat-icon class="text-icon" aria-label="phone-call">call</mat-icon>
+          </span>
+          <span>+380731104101</span>
+        </a>
       </div>
-      <!--      <div class="flex">-->
-      <!--        <a [routerLink]="appRoutes.home" class="flex-col text-accent">-->
-      <!--          <span>Стеценко, 19/91</span>-->
-      <!--          <span>( метро Нивки )</span>-->
-      <!--        </a>-->
-      <!--        <a mat-button color="accent" href="tel:+380731104101">+380731104101</a>-->
-      <!--      </div>-->
 
       <button
         type="button"

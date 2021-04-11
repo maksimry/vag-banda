@@ -11,6 +11,10 @@ import { AppRoutes } from '../../constants/app-routes'
 })
 export class MainNavComponent {
   public readonly appRoutes = AppRoutes
+  public readonly geoLocationAddress = 'Киевская, 8a'
+  public readonly geoLocationDistrict = 'Софиеская борщаговка'
+  public readonly geoLocationUrl = `http://maps.google.com/?q=${this.geoLocationDistrict}, ${this.geoLocationAddress}`
+
   public isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(result => result.matches),
     shareReplay()

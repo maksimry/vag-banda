@@ -12,6 +12,12 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      spacing: {
+        sm: '5px',
+        md: '10px',
+        lg: '20px',
+        xl: '40px',
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
