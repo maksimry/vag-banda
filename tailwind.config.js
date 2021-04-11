@@ -11,7 +11,22 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        indigo: {
+          light: '#5c667f',
+          DEFAULT: '#313c53',
+          dark: '#08162a',
+        },
+        yellow: {
+          light: '#ffff79',
+          DEFAULT: '#fff343',
+          dark: '#c8c100',
+        }
+      }
+    },
   },
   variants: {
     extend: {},
