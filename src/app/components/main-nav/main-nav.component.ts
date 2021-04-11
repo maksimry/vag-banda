@@ -15,6 +15,17 @@ export class MainNavComponent {
   public readonly geoLocationDistrict = 'Софиеская борщаговка'
   public readonly geoLocationUrl = `http://maps.google.com/?q=${this.geoLocationDistrict}, ${this.geoLocationAddress}`
 
+  public readonly socials = [
+    {
+      icon: 'facebook',
+      url: decodeURIComponent('https://facebook.com/vagbanda.com.ua/')
+    },
+    {
+      icon: 'instagram',
+      url: decodeURIComponent('https://instagram.com/vagbanda_kiev/')
+    }
+  ]
+
   public isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(result => result.matches),
     shareReplay()

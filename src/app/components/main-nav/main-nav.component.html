@@ -13,33 +13,45 @@
       <a mat-list-item [routerLink]="appRoutes.home">Главная</a>
       <a mat-list-item [routerLink]="appRoutes.about">0 нас</a>
       <a mat-list-item [routerLink]="appRoutes.services">Услуги</a>
+      <mat-list-item>
+        <div class="flex justify-around w-full">
+          <a *ngFor="let soc of socials" [href]="soc.url" target="_blank" class="mr-md flex items-center">
+            <mat-icon [svgIcon]="soc.icon" class="mr-sm" aria-label="map-location"></mat-icon>
+          </a>
+        </div>
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary" role="heading">
-      <a mat-button color="primary" [routerLink]="appRoutes.about">
+      <a mat-button color="primary" [routerLink]="appRoutes.home">
         <img class="logo-img" src="/assets/img/vag-banda-logo.png" alt="bndservice logo" />
       </a>
 
       <span style="flex: 1 1 auto"></span>
-      <div></div>
-      <div class="flex">
+
+      <div class="flex mr-lg">
         <a [href]="geoLocationUrl" class="flex text-yellow text-sm mr-lg" target="_blank">
           <span class="mr-md flex items-center">
             <mat-icon class="text-icon" aria-label="map-location">location_on</mat-icon>
           </span>
 
-          <span class="flex flex-col">
-            <span>{{geoLocationAddress}}</span>
-            <span>{{geoLocationDistrict}}</span>
+          <span class="flex flex-col" *ngIf="!(isHandset$ | async)">
+            <span>{{ geoLocationAddress }}</span>
+            <span>{{ geoLocationDistrict }}</span>
           </span>
         </a>
 
-        <a href="tel:+380731104101" class="flex items-center text-accent text-sm mr-lg">
+        <a href="tel:+380731104101" class="flex items-center text-accent text-sm">
           <span class="mr-md flex items-center">
-            <mat-icon class="text-icon" aria-label="phone-call">call</mat-icon>
+            <mat-icon class="text-icon" aria-label="phone call">call</mat-icon>
           </span>
-          <span>+380731104101</span>
+          <span *ngIf="!(isHandset$ | async)">+380731104101</span>
+        </a>
+      </div>
+      <div class="flex mr-sm" *ngIf="!(isHandset$ | async)">
+        <a *ngFor="let soc of socials" [href]="soc.url" target="_blank" class="mr-md flex items-center">
+          <mat-icon [svgIcon]="soc.icon" class="text-accent mr-sm" aria-label="social link"></mat-icon>
         </a>
       </div>
 
@@ -54,11 +66,11 @@
       </button>
     </mat-toolbar>
     <mat-toolbar *ngIf="!(isHandset$ | async)">
-      <nav class="desktop-menu">
-        <a mat-button color="primary" [routerLink]="appRoutes.about">0 нас</a>
-        <a mat-button color="primary" [routerLink]="appRoutes.services">Услуги</a>
-        <a mat-button color="primary" [routerLink]="appRoutes.contacts">Контакты</a>
-        <a mat-button color="primary" [routerLink]="appRoutes.home">
+      <nav class="flex justify-around items-center w-full">
+        <a mat-button color="primary" class="font-bold text-lg" [routerLink]="appRoutes.about">0 нас</a>
+        <a mat-button color="primary" class="font-bold text-lg" [routerLink]="appRoutes.services">Услуги</a>
+        <a mat-button color="primary" class="font-bold text-lg" [routerLink]="appRoutes.contacts">Контакты</a>
+        <a mat-button color="primary" class="font-bold text-lg" [routerLink]="appRoutes.home">
           <img class="logo-img-menu" src="/assets/img/vag-banda-logo.png" alt="bndservice logo" />
         </a>
       </nav>

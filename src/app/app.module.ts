@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser'
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 
 import { AppRoutingModule } from './app-routing.module'
@@ -9,7 +9,7 @@ import { MainNavComponent } from './components/main-nav/main-nav.component'
 import { LayoutModule } from '@angular/cdk/layout'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
 import { HomeComponent } from './pages/home/home.component'
 import { AboutComponent } from './pages/about/about.component'
@@ -42,4 +42,14 @@ import { ContactsComponent } from './pages/contacts/contacts.component'
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+    const icons = ['instagram', 'facebook']
+    icons.forEach(icon => {
+      this.matIconRegistry.addSvgIcon(
+        icon,
+        this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/socials/${icon}.svg`)
+      )
+    })
+  }
+}
