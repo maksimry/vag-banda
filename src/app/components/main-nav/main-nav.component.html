@@ -17,7 +17,10 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary" role="heading">
-      <img class="logo-img" src="/assets/img/vag-banda-logo.png" alt="bndservice logo" />
+      <a mat-button color="primary" [routerLink]="appRoutes.about">
+        <img class="logo-img" src="/assets/img/vag-banda-logo.png" alt="bndservice logo" />
+      </a>
+
       <span style="flex: 1 1 auto"></span>
       <div></div>
       <div class="flex">
@@ -49,13 +52,13 @@
       <nav class="desktop-menu">
         <a mat-button color="primary" [routerLink]="appRoutes.about">0 нас</a>
         <a mat-button color="primary" [routerLink]="appRoutes.services">Услуги</a>
-        <a mat-button color="primary" [routerLink]="appRoutes.home">Контакты</a>
+        <a mat-button color="primary" [routerLink]="appRoutes.contacts">Контакты</a>
         <a mat-button color="primary" [routerLink]="appRoutes.home">
           <img class="logo-img-menu" src="/assets/img/vag-banda-logo.png" alt="bndservice logo" />
         </a>
       </nav>
     </mat-toolbar>
-    <main style="margin-top: 30px">
+    <main>
       <ng-content></ng-content>
     </main>
   </mat-sidenav-content>

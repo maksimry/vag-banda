@@ -19,9 +19,10 @@ import { HttpClientModule } from '@angular/common/http'
 import { MatInputModule } from '@angular/material/input'
 import { MatFormField } from '@angular/material/form-field'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { ContactsComponent } from './pages/contacts/contacts.component'
 
 @NgModule({
-  declarations: [AppComponent, MainNavComponent, HomeComponent, AboutComponent, ServicesComponent],
+  declarations: [AppComponent, MainNavComponent, HomeComponent, AboutComponent, ServicesComponent, ContactsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

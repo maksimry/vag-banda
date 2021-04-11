@@ -4,6 +4,7 @@ import { AppRoutes } from './constants/app-routes'
 import { HomeComponent } from './pages/home/home.component'
 import { AboutComponent } from './pages/about/about.component'
 import { ServicesComponent } from './pages/services/services.component'
+import { ContactsComponent } from './pages/contacts/contacts.component'
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path: AppRoutes.services,
         component: ServicesComponent
+      },
+      {
+        path: AppRoutes.contacts,
+        component: ContactsComponent
       }
     ]
   }

@@ -7,3 +7,22 @@
   width: 300px;
   padding: 20px;
 }
+article {
+  background: url('https://www.car-service.in.ua/wp-content/uploads/2020/05/A91FB958-6AB3-4D05-962A-614AA55FC067.jpeg')
+    center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+article h1 {
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+}
+/**/
+.feedback-block {
+  background: #fff;
+  padding: 20px;
+  height: fit-content;
+}
