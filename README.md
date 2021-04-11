@@ -26,5 +26,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-Tailwindcss guide
+#### Some useful stuff
+
+ng g @angular/material:material-nav --name=main-nav
+
+###### git user
+git config user.email rybalchenko.mx@gmail.com
+git config user.name maksymrybalchenkogh
+
+###### Tailwindcss guide
 https://jacobneterer.medium.com/angular-and-tailwindcss-2388fb6e0bab
+
