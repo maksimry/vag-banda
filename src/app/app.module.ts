@@ -21,6 +21,8 @@ import { MatFormField } from '@angular/material/form-field'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ContactsComponent } from './pages/contacts/contacts.component'
 import { FooterComponent } from './components/footer/footer.component'
+import { GeoMapComponent } from './components/geo-map/geo-map.component'
+import { LeafletModule } from '@asymmetrik/ngx-leaflet'
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { FooterComponent } from './components/footer/footer.component'
     AboutComponent,
     ServicesComponent,
     ContactsComponent,
-    FooterComponent
+    FooterComponent,
+    GeoMapComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { FooterComponent } from './components/footer/footer.component'
     MatCardModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]

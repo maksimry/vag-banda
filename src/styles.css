@@ -23,7 +23,7 @@ body {
 
 
 .text-primary {
-  @apply text-yellow;
+  @apply text-indigo;
 }
 .text-accent {
   @apply text-yellow;
