@@ -11,6 +11,17 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+.main-wrapper {
+  @apply px-md !important;
+}
+
+@media only screen and (min-width: theme('screens.md')) {
+  .main-wrapper {
+    @apply px-lg !important;
+  }
+}
+
+
 .text-primary {
   @apply text-yellow;
 }

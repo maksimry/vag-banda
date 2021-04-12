@@ -1,4 +1,5 @@
-<footer class="flex flex-col md:flex-row md:justify-between px-sm bg-indigo">
+<footer class="flex flex-col md:flex-row md:justify-between bg-indigo main-wrapper">
+
   <a [routerLink]="appRoutes.home" class="flex justify-center">
     <img class="logo-img" src="/assets/img/vag-banda-logo.png" alt="bndservice logo" />
   </a>
@@ -26,9 +27,9 @@
     </a>
   </div>
 
-  <div class="flex items-center justify-center sm:mb-lg md:mb-0 md:mr-lg">
-    <a *ngFor="let soc of contacts.socials" [href]="soc.url" target="_blank" class="mr-md flex items-center">
-      <mat-icon [svgIcon]="soc.icon" class="social-icon text-accent mr-sm" aria-label="social link"></mat-icon>
+  <div class="flex items-center justify-center mb-lg md:mb-0">
+    <a *ngFor="let soc of contacts.socials" [href]="soc.url" target="_blank" class="mr-md last:mr-0 flex items-center">
+      <mat-icon [svgIcon]="soc.icon" class="social-icon text-accent" aria-label="social link"></mat-icon>
     </a>
   </div>
 </footer>

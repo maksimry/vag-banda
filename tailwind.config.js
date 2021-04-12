@@ -35,7 +35,16 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      display: ['responsive'],
+      margin: ['responsive', 'first', 'last'],
+      padding: ['responsive', 'first', 'last'],
+      textAlign: ['responsive', 'first', 'last'],
+      outline: ['focus'],
+      backgroundColor: ['hover', 'focus', 'active', 'group-hover'],
+      textColor: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+      opacity: ['responsive', 'hover', 'group-hover'],
+    }
   },
   plugins: [],
 }
