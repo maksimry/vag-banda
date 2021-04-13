@@ -1,29 +1,11 @@
-<article>
-  <h1 class="mat-display-3">Профессиональный сервис и обслуживвание автомобилей</h1>
-  <div class="feedback-block hidden">
-    <form>
-      <mat-form-field class="example-form-field">
-        <mat-label>Имя</mat-label>
-        <input matInput type="text" />
-        <button mat-button *ngIf="value1" matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field>
-      <mat-form-field class="example-form-field">
-        <mat-label>Телефон</mat-label>
-        <input matInput type="text" />
-        <button mat-button *ngIf="value2" matSuffix mat-icon-button aria-label="Clear" (click)="value2 = ''">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field>
-      <mat-form-field class="example-form-field">
-        <mat-label>Сообщение</mat-label>
-        <input matInput type="text" />
-        <button mat-button *ngIf="value3" matSuffix mat-icon-button aria-label="Clear" (click)="value3 = ''">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field>
-    </form>
+<article class="main-wrapper flex flex-col md:flex-row md:justify-between items-center md:items-start py-xl">
+  <div class="mb-xl">
+    <h1 class="text-2xl md:text-3xl font-bold text-primary text-center title">
+      Профессиональный сервис и обслуживание автомобилей
+    </h1>
+  </div>
+  <div class="feedback-block">
+    <app-feedback-form></app-feedback-form>
   </div>
 </article>
 <app-geo-map></app-geo-map>

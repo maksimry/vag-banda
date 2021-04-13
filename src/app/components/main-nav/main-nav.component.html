@@ -10,9 +10,9 @@
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="appRoutes.home">Главная</a>
-      <a mat-list-item [routerLink]="appRoutes.about">0 нас</a>
-      <a mat-list-item [routerLink]="appRoutes.services">Услуги</a>
+      <a mat-list-item [routerLink]="appRoutes.home" (click)="drawer.toggle()">Главная</a>
+      <a mat-list-item [routerLink]="appRoutes.about" (click)="drawer.toggle()">0 нас</a>
+      <a mat-list-item [routerLink]="appRoutes.services" (click)="drawer.toggle()">Услуги</a>
       <mat-list-item>
         <div class="flex justify-around w-full">
           <a *ngFor="let soc of socials" [href]="soc.url" target="_blank" class="mr-md flex items-center last:mr-0">
@@ -68,7 +68,7 @@
       </mat-toolbar>
 
       <mat-toolbar *ngIf="!(isHandset$ | async)">
-        <nav class="flex justify-around items-center w-full">
+        <nav class="flex justify-around items-center w-full py-md">
           <a mat-button color="primary" class="font-bold text-lg" [routerLink]="appRoutes.about">0 нас</a>
           <a mat-button color="primary" class="font-bold text-lg" [routerLink]="appRoutes.services">Услуги</a>
           <a mat-button color="primary" class="font-bold text-lg" [routerLink]="appRoutes.contacts">Контакты</a>
@@ -81,7 +81,3 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<!--<button mat-stroked-button-->
-<ng-container *ngTemplateOutlet="menuList"></ng-container>
-<ng-template #menuList></ng-template>

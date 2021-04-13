@@ -23,6 +23,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component'
 import { FooterComponent } from './components/footer/footer.component'
 import { GeoMapComponent } from './components/geo-map/geo-map.component'
 import { LeafletModule } from '@asymmetrik/ngx-leaflet'
+import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet'
     ServicesComponent,
     ContactsComponent,
     FooterComponent,
-    GeoMapComponent
+    GeoMapComponent,
+    FeedbackFormComponent
   ],
   imports: [
     BrowserModule,

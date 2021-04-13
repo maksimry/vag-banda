@@ -17,10 +17,9 @@ body {
 
 @media only screen and (min-width: theme('screens.md')) {
   .main-wrapper {
-    @apply px-lg !important;
+    @apply px-xl !important;
   }
 }
-
 
 .text-primary {
   @apply text-indigo;
