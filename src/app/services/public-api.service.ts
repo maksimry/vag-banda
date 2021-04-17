@@ -11,7 +11,7 @@ export class PublicApiService {
   private readonly url = `https://api.telegram.org/bot${this.TG_BOT_API_KEY}/sendMessage?chat_id=${this.TG_CHAT_ID}&text=`
   constructor(private http: HttpClient) {}
 
-  public sendBndServiceBotMessage(text: string): void {
-    this.http.get(this.url + text).subscribe()
+  public sendBndServiceBotMessage(text: string): Observable<any> {
+    return this.http.get(this.url + text)
   }
 }

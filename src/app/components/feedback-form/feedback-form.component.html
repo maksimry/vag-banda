@@ -1,27 +1,43 @@
-<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="flex flex-col p-lg rounded bg-white">
-  <h3 class="text-xl">Оставьте заявку</h3>
-  <mat-form-field class="example-form-field">
-    <mat-label>Имя</mat-label>
-    <input matInput type="text" formControlName="name" />
-    <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearField('name')">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
-  <mat-form-field class="example-form-field">
-    <mat-label>Телефон</mat-label>
-    <input matInput type="text" formControlName="phone" />
-    <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearField('phone')">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
-  <mat-form-field class="example-form-field">
-    <mat-label>Сообщение</mat-label>
-    <input matInput type="text" formControlName="message" />
-    <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearField('message')">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
-  <div class="mt-md">
-    <button mat-raised-button color="primary" type="submit" class="w-full">Написать</button>
-  </div>
-</form>
+<aside class="flex flex-col items-center justify-between p-lg rounded bg-white" *ngIf="statusMessage$ | async as status">
+  <h3 class="text-xl text-center mb-md" [class.mat-error]="!status.success && status.done">
+    {{status.text}}
+  </h3>
+  <ng-container *ngIf="status.success">
+    <mat-icon aria-label="success" class="text-green-400 text-6xl mb-lg" >check_circle_outline</mat-icon>
+    <button mat-raised-button color="primary" type="button" class="w-full" (click)="restoreStatus()">Написать еще раз</button>
+  </ng-container>
+
+  <form
+    *ngIf="!status?.success || !status?.done"
+    [formGroup]="feedbackForm"
+    (ngSubmit)="onSubmit()"
+    class="flex flex-col w-full"
+  >
+    <mat-form-field class="example-form-field" appearance="outline">
+      <mat-label>Имя</mat-label>
+      <input matInput required placeholder="Серега Торговый" type="text" formControlName="name" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearField('name')">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="example-form-field" appearance="outline">
+      <mat-label>Телефон</mat-label>
+      <input matInput required placeholder="0992222222" type="tel" formControlName="phone" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearField('phone')">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="example-form-field" appearance="outline">
+      <mat-label>Сообщение</mat-label>
+      <input matInput type="text" formControlName="message" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearField('message')">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <div class="mt-md">
+      <button mat-raised-button color="primary" type="submit" class="w-full">Написать</button>
+    </div>
+  </form>
+</aside>
+
+

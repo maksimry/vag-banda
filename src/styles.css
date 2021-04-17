@@ -27,3 +27,7 @@ body {
 .text-accent {
   @apply text-yellow;
 }
+
+.mat-focused .mat-form-field-required-marker {
+  color: #f44336;
+}
